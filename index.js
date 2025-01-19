@@ -38,30 +38,36 @@ app.use(express.json());
 
 // Data sementara yang menyimpan title dan body
 let postData = {
-  title: "Default Title",
-  body: "This is the default body of the post."
+  id: 2025,
+  name : "trusmi",
+  addr : "A01",
+  loc : "tegalsari"
 };
 
 // Endpoint GET
 app.get("/panic", (req, res) => {
   // Mengembalikan nilai parameter yang terakhir diset
   res.json({
-    title: postData.title,
-    body: postData.body
+    id: postData.id,
+    name: postData.name,
+    addr: postData.addr,
+    loc: postData.loc
   });
 });
 
 // Endpoint POST
 app.post("/panic", (req, res) => {
-  const { title, body } = req.body;
+  const { id, name, addr, loc } = req.body;
 
   // Update nilai parameter yang disimpan
-  if (title) postData.title = title;
-  if (body) postData.body = body;
+  if (id) postData.id = id;
+  if (name) postData.name = name;
+  if (addr) postData.addr = addr;
+  if (loc) postData.loc = loc;
 
   res.json({
     message: "Post updated successfully!",
-    post: { title: postData.title, body: postData.body }
+    post: { id: postData.id, name: postData.name, addr: postData.addr, loc: postData.loc }
   });
 });
 
