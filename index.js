@@ -39,9 +39,9 @@ app.use(express.json());
 // Data sementara yang menyimpan title dan body
 let postData = {
   id: 2025,
-  name : "trusmi",
-  addr : "A01",
-  loc : "tegalsari"
+  name : "default name",
+  addr : "default address",
+  loc : "default location"
 };
 
 // Endpoint GET
