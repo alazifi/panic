@@ -6,7 +6,7 @@ const port = 3000;
 app.use(express.json());
 
 // Data sementara yang menyimpan title dan body
-let postData = {
+let data = {
   id: 2025,
   name : "default name",
   addr : "default address",
@@ -17,10 +17,10 @@ let postData = {
 app.get("/panic", (req, res) => {
   // Mengembalikan nilai parameter yang terakhir diset
   res.json({
-    id: postData.id,
-    name: postData.name,
-    addr: postData.addr,
-    loc: postData.loc
+    id: data.id,
+    name: data.name,
+    addr: data.addr,
+    loc: data.loc
   });
 });
 
@@ -29,14 +29,14 @@ app.post("/panic", (req, res) => {
   const { id, name, addr, loc } = req.body;
 
   // Update nilai parameter yang disimpan
-  if (id) postData.id = id;
-  if (name) postData.name = name;
-  if (addr) postData.addr = addr;
-  if (loc) postData.loc = loc;
+  if (id) data.id = id;
+  if (name) data.name = name;
+  if (addr) data.addr = addr;
+  if (loc) data.loc = loc;
 
   res.json({
     message: "Post updated successfully!",
-    post: { id: postData.id, name: postData.name, addr: postData.addr, loc: postData.loc }
+    post: { id: data.id, name: data.name, addr: data.addr, loc: data.loc }
   });
 });
 
