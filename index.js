@@ -11,7 +11,7 @@ let data = {
   name : "nama",
   addr : "alamat",
   loc : "lokasi",
-  id_device : "Pemangkang-01"
+  id_device : "Pamengkang-01"
 };
 
 // Endpoint GET
