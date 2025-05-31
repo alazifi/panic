@@ -5,7 +5,7 @@ const port = 3000;
 // Middleware untuk parsing JSON (POST request)
 app.use(express.json());
 
-// Data sementara yang menyimpan title dan body
+//  Data sementara yang menyimpan title dan body
 let data = {
   id: 2025,
   name : "nama",
